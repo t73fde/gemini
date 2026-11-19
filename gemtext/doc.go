@@ -19,12 +19,11 @@
 // the line types of the specification and represents each of them as one
 // element of a [Document]:
 //
-//   - [Text]: plain text line
-//   - [Blank]: empty line or line that consists of whitespace only
+//   - [Text]: plain text line, possibly empty
 //   - [Link]: "=> URL [label]"
 //   - [Heading]: "#", "##" or "###" followed by text
 //   - [ListItem]: "* text"
-//   - [Quote]: "> text"
+//   - [Quote]: ">text"
 //   - [Preformatted]: lines between two "```" lines, with optional alt text
 //
 // Parsing never fails. Input that does not match a more specific line type

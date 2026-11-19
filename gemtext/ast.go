@@ -26,9 +26,6 @@ type Line interface {
 // Text is a plain text, non-empty line.
 type Text struct{ Text string }
 
-// Blank is an empty line or a line that consists of whitespace only.
-type Blank struct{}
-
 // Link is a link line: "=> URL [label]".
 type Link struct{ URL, Label string }
 
@@ -51,7 +48,6 @@ type Preformatted struct {
 }
 
 func (Text) isLine()         {}
-func (Blank) isLine()        {}
 func (Link) isLine()         {}
 func (Heading) isLine()      {}
 func (ListItem) isLine()     {}
