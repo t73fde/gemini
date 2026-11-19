@@ -41,7 +41,7 @@ the specification:
   characters belong to the heading text, so `####x` is a level 3 heading with
   the text `#x`.
 - A `*` is a list item marker only if it is followed by a space.
-- Text after the closing `` ``` `` of a preformatted block is ignored.
+- Text after the closing &#96;&#96;&#96; of a preformatted block is ignored.
 - A preformatted block that is not closed at the end of the input is closed
   implicitly.
 - Whitespace means space and tab.
