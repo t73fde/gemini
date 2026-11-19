@@ -13,13 +13,13 @@ converters, for example into other document encodings or HTML.
 `Parse` returns a `Document`, which holds a flat list of lines. Each line is
 one of the following types:
 
-| Type           | Source line                                         |
-|----------------|-----------------------------------------------------|
-| `Text`         | plain text line, possibly empty                     |
-| `Link`         | `=> URL [label]`                                    |
-| `Heading`      | `#`, `##` or `###` followed by text                 |
-| `ListItem`     | `* text`                                            |
-| `Quote`        | `>text`                                             |
+| Type           | Source line                                            |
+|----------------|--------------------------------------------------------|
+| `Text`         | plain text line, possibly empty                        |
+| `Link`         | `=> URL [label]`                                       |
+| `Heading`      | `#`, `##` or `###` followed by text                    |
+| `ListItem`     | `* text`                                               |
+| `Quote`        | `>text`                                                |
 | `Preformatted` | lines between two \`\`\` lines, with optional alt text |
 
 The tree is deliberately flat. Grouping of consecutive lines, for example into
