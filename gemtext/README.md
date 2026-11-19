@@ -20,7 +20,7 @@ one of the following types:
 | `Heading`      | `#`, `##` or `###` followed by text                    |
 | `ListItem`     | `* text`                                               |
 | `Quote`        | `>text`                                                |
-| `Preformatted` | lines between two \`\`\` lines, with optional alt text |
+| `Preformatted` | lines between two &#96;&#96;&#96; lines, with optional alt text |
 
 The tree is deliberately flat. Grouping of consecutive lines, for example into
 paragraphs, lists or quote blocks, is left to the consumer, because different
