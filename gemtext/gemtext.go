@@ -84,7 +84,7 @@ func parseLink(rest []byte) Link {
 	rest = bytes.TrimLeft(rest, whitespace)
 	url, label := rest, []byte(nil)
 	if i := bytes.IndexAny(rest, whitespace); i >= 0 {
-		url, label = rest[:i], rest[i+1:]
+		url, label = rest[:i], bytes.TrimLeft(rest[i:], whitespace)
 	}
 	return Link{URL: string(url), Label: string(label)}
 }

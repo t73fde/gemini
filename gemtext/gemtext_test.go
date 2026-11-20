@@ -44,11 +44,13 @@ func TestParse(t *testing.T) {
 		{"link", "=> gemini://x.org", lines{gemtext.Link{URL: "gemini://x.org"}}},
 		{"link label", "=> /p Label text", lines{gemtext.Link{URL: "/p", Label: "Label text"}}},
 		{"link no space", "=>/p L", lines{gemtext.Link{URL: "/p", Label: "L"}}},
-		{"link tabs", "=>\t/p \t L \t", lines{gemtext.Link{URL: "/p", Label: "\t L \t"}}},
-		{"link tabs first", "=>\t/p\t L \t", lines{gemtext.Link{URL: "/p", Label: " L \t"}}},
+		{"link tabs", "=>\t/p \t L \t", lines{gemtext.Link{URL: "/p", Label: "L \t"}}},
+		{"link tabs first", "=>\t/p\t L \t", lines{gemtext.Link{URL: "/p", Label: "L \t"}}},
 		{"link without url", "=>", lines{gemtext.Link{URL: "", Label: ""}}},
 		{"link whitespace only", "=>  ", lines{gemtext.Link{URL: "", Label: ""}}},
 		{"leading space no link", " => /p", lines{gemtext.Text{Text: " => /p"}}},
+		{"link two spaces", "=> /p  L", lines{gemtext.Link{URL: "/p", Label: "L"}}},
+		{"link no label", "=> /p  ", lines{gemtext.Link{URL: "/p", Label: ""}}},
 
 		// Headings
 		{"h1", "# a", lines{gemtext.Heading{Level: 1, Text: " a"}}},

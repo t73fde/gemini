@@ -13,13 +13,13 @@ converters, for example into other document encodings or HTML.
 `Parse` returns a `Document`, which holds a flat list of lines. Each line is
 one of the following types:
 
-| Type           | Source line                                            |
-|----------------|--------------------------------------------------------|
-| `Text`         | plain text line, possibly empty                        |
-| `Link`         | `=> URL [label]`                                       |
-| `Heading`      | `#`, `##` or `###` followed by text                    |
-| `ListItem`     | `* text`                                               |
-| `Quote`        | `>text`                                                |
+| Type           | Source line                                         |
+|----------------|-----------------------------------------------------|
+| `Text`         | plain text line, empty Text represents a blank line |
+| `Link`         | `=> URL [label]`                                    |
+| `Heading`      | `#`, `##` or `###` followed by text                 |
+| `ListItem`     | `* text`                                            |
+| `Quote`        | `>text`                                             |
 | `Preformatted` | lines between two &#96;&#96;&#96; lines, with optional alt text |
 
 The tree is deliberately flat. Grouping of consecutive lines, for example into
@@ -45,6 +45,8 @@ the specification:
 - A preformatted block that is not closed at the end of the input is closed
   implicitly.
 - Whitespace means space and tab.
+- Lines may end with LF or CRLF.
+- Empty input yields a document without lines.
 
 ## Limitations
 

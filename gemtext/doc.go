@@ -19,7 +19,7 @@
 // the line types of the specification and represents each of them as one
 // element of a [Document]:
 //
-//   - [Text]: plain text line, possibly empty
+//   - [Text]: plain text line, empty Text represents a blank line
 //   - [Link]: "=> URL [label]"
 //   - [Heading]: "#", "##" or "###" followed by text
 //   - [ListItem]: "* text"
@@ -37,6 +37,9 @@
 //   - A "*" is a list item marker only if it is followed by a space.
 //   - A preformatted block that is not closed by the end of the input is
 //     closed implicitly.
+//   - Text of [Heading], [ListItem], [Quote] and the alt text of
+//     [Preformatted] is the remainder of the line, unchanged. Leading
+//     whitespace is part of the text.
 //   - Whitespace means space and tab. The input is not validated to be UTF-8.
 //
 // All strings in the tree are copies; the tree does not refer to the input.
